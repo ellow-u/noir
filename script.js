@@ -63,6 +63,38 @@ card.style.transform="translate(0,0)";
 
 });
 
+
+// ==========================
+// MOBILE NAVBAR TOGGLE
+// ==========================
+
+const menuBtn = document.querySelector(".menu-btn");
+const navLinks = document.querySelector(".nav-links");
+
+if (menuBtn && navLinks) {
+    menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        
+        // Toggle hamburger icon between bars and 'X'
+        const icon = menuBtn.querySelector("i");
+        if (icon) {
+            icon.classList.toggle("fa-bars");
+            icon.classList.toggle("fa-xmark");
+        }
+    });
+
+    // Close mobile menu when clicking a nav link
+    navLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+            const icon = menuBtn.querySelector("i");
+            if (icon) {
+                icon.classList.add("fa-bars");
+                icon.classList.remove("fa-xmark");
+            }
+        });
+    });
+}
 //==========================
 // PORTFOLIO ANIMATION
 //==========================

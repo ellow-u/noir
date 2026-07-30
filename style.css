@@ -2711,7 +2711,7 @@ border-color:#B11F3D;
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 576px) {
   .menu-btn {
         display: block;
         color: #fff;

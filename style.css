@@ -159,7 +159,6 @@ box-shadow .35s;
 
 .logo{
 
-
 font-family:"Cormorant Garamond",serif;
 
 font-size:2rem;
@@ -193,8 +192,6 @@ font-size:2.3rem;
 letter-spacing:5px;
 
 }
-
-
 
 .nav-links{
 
@@ -270,6 +267,8 @@ transition:.35s;
 
 font-weight:500;
 
+display:inline-block;
+
 }
 
 .btn:hover{
@@ -289,6 +288,8 @@ font-size:1.7rem;
 
 cursor:pointer;
 
+color:#fff;
+
 }
 
 .navbar.scrolled{
@@ -303,44 +304,6 @@ box-shadow:0 10px 35px rgba(0,0,0,.35);
 
 }
 
-/*==============================
-RESPONSIVE NAVBAR FIXES
-==============================*/
-
-@media (max-width: 992px) {
-    .menu-btn {
-        display: block;
-        z-index: 1001;
-    }
-
-    header nav .btn {
-        display: none; /* Hide top CTA button inside nav on mobile if space is tight, or keep it in the menu */
-    }
-
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        height: 100vh;
-        background: rgba(11, 5, 5, 0.98);
-        backdrop-filter: blur(25px);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        transition: 0.45s ease-in-out;
-        z-index: 1000;
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    .nav-links a {
-        font-size: 1.5rem;
-    }
-}
 /*==============================
 HERO
 ==============================*/
@@ -431,6 +394,8 @@ border:1px solid rgba(255,255,255,.15);
 
 transition:.35s;
 
+display:inline-block;
+
 }
 
 .btn-outline:hover{
@@ -450,6 +415,10 @@ justify-content:center;
 
 align-items:center;
 
+position:relative;
+
+min-height:620px;
+
 }
 
 .hero-glow{
@@ -465,16 +434,6 @@ background:radial-gradient(circle, rgba(177,31,61,.35), transparent 70%);
 filter:blur(30px);
 
 animation:float 6s ease-in-out infinite;
-
-}
-
-@keyframes float{
-
-50%{
-
-transform:translateY(-25px);
-
-}
 
 }
 
@@ -499,19 +458,9 @@ transform:translateY(-25px);
     animation-delay:2s;
 }
 
-
-
 /*==============================
 GLASS CARDS
 ==============================*/
-
-.hero-right{
-
-position:relative;
-
-min-height:620px;
-
-}
 
 .glass-card{
 
@@ -579,43 +528,29 @@ color:var(--paragraph);
 }
 
 .card1{
-
 top:20px;
 left:-30px;
-
 }
 
 .card2{
 top:190px;
 right:-40px;
-
 animation-delay:2s;
-
 }
 
 .card3{
-
 bottom:10px;
 left:20px;
-
 animation-delay:4s;
-
 }
 
 @keyframes floatCard{
-
 0%,100%{
-
 transform:translateY(0);
-
 }
-
 50%{
-
 transform:translateY(-18px);
-
 }
-
 }
 
 /*==============================
@@ -625,9 +560,6 @@ HERO SHOWCASE
 .hero-showcase{
 
 position:relative;
-
-
-
 
 isolation:isolate;
 
@@ -690,47 +622,31 @@ animation:rotateRing linear infinite;
 }
 
 .ring1{
-
 width:340px;
 height:340px;
 animation-duration:12s;
-
 }
 
 .ring2{
-
 width:460px;
 height:460px;
-
 animation-duration:18s;
-
 animation-direction:reverse;
-
 }
 
 .ring3{
-
 width:580px;
 height:580px;
-
 animation-duration:25s;
-
 }
 
 @keyframes rotateRing{
-
 from{
-
 transform:rotate(0deg);
-
 }
-
 to{
-
 transform:rotate(360deg);
-
 }
-
 }
 
 .hero-ring::before{
@@ -756,8 +672,6 @@ border-radius:50%;
 box-shadow:0 0 20px var(--accent);
 
 }
-
-
 
 /*==============================
 TRUSTED
@@ -947,44 +861,6 @@ font-weight:500;
 
 }
 
-@media(max-width:992px){
-
-.about-container{
-
-grid-template-columns:1fr;
-
-}
-
-.trusted-logos{
-
-grid-template-columns:repeat(3,1fr);
-
-}
-
-}
-
-@media(max-width:768px){
-
-.about h2{
-
-font-size:2.5rem;
-
-}
-
-.about-features{
-
-grid-template-columns:1fr;
-
-}
-
-.trusted-logos{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-}
-
 /*==============================
 SERVICES
 ==============================*/
@@ -1170,32 +1046,6 @@ color:var(--accent);
 
 }
 
-@media(max-width:992px){
-
-.services-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-}
-
-@media(max-width:768px){
-
-.section-heading h2{
-
-font-size:2.7rem;
-
-}
-
-.services-grid{
-
-grid-template-columns:1fr;
-
-}
-
-}
-
 /*==============================
 PORTFOLIO
 ==============================*/
@@ -1286,7 +1136,6 @@ transform:translateY(0) scale(1);
 
 .portfolio-card img{
 
-
 width:100%;
 
 height:100%;
@@ -1298,6 +1147,7 @@ display:block;
 transition:transform .8s ease;
 
 }
+
 .portfolio-card:nth-child(2) img,
 .portfolio-card:nth-child(5) img{
 
@@ -1341,12 +1191,6 @@ opacity:0;
 transform:translateY(30px);
 
 transition:.45s;
-
-}
-
-.portfolio-card:hover img{
-
-transform:scale(1.08);
 
 }
 
@@ -1401,9 +1245,7 @@ transform:translateY(0);
 .portfolio-card:hover{
 
 box-shadow:
-
 0 30px 80px rgba(0,0,0,.45),
-
 0 0 30px rgba(177,31,61,.20);
 
 }
@@ -1413,11 +1255,8 @@ box-shadow:
 border:1px solid rgba(255,255,255,.08);
 
 transition:
-
 transform .45s,
-
 box-shadow .45s,
-
 border-color .45s;
 
 }
@@ -1479,26 +1318,6 @@ transition:.3s;
 background:#8D1630;
 
 transform:translateY(-5px);
-
-}
-
-@media(max-width:992px){
-
-.portfolio-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-}
-
-@media(max-width:768px){
-
-.portfolio-grid{
-
-grid-template-columns:1fr;
-
-}
 
 }
 
@@ -1622,21 +1441,6 @@ font-size:.95rem;
 
 }
 
-@media(max-width:1100px){
-
-.process-timeline{
-
-grid-template-columns:1fr;
-
-}
-
-.process-timeline::before{
-
-display:none;
-
-}
-
-}
 /*==============================
 STATISTICS
 ==============================*/
@@ -1731,26 +1535,6 @@ color:var(--accent);
 color:var(--paragraph);
 
 letter-spacing:1px;
-
-}
-
-@media(max-width:992px){
-
-.stats-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-}
-
-@media(max-width:768px){
-
-.stats-grid{
-
-grid-template-columns:1fr;
-
-}
 
 }
 
@@ -1905,23 +1689,6 @@ text-align:center;
 display:block;
 
 }
-
-@media(max-width:992px){
-
-.pricing-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.featured-price{
-
-transform:none;
-
-}
-
-}
-
 
 /*==============================
 FAQ
@@ -2167,25 +1934,6 @@ box-shadow:0 0 25px rgba(177,31,61,.4);
 
 }
 
-@media(max-width:768px){
-
-.testimonial-slider{
-
-flex-direction:column;
-
-}
-
-.testimonial-track{
-
-width:100%;
-
-min-height:500px;
-
-}
-
-}
-
-
 /*==============================
 TEAM
 ==============================*/
@@ -2315,17 +2063,6 @@ background:linear-gradient(135deg,#8D1630,#4F0D1A);
 transform:translateY(-5px);
 
 }
-
-@media(max-width:992px){
-
-.team-grid{
-
-grid-template-columns:1fr;
-
-}
-
-}
-
 
 /*==============================
 CONTACT
@@ -2478,23 +2215,6 @@ border:none;
 cursor:pointer;
 
 }
-
-@media(max-width:992px){
-
-.contact-container{
-
-grid-template-columns:1fr;
-
-}
-
-.contact-info h2{
-
-font-size:2.8rem;
-
-}
-
-}
-
 
 /*==============================
 SCROLL REVEAL
@@ -2744,24 +2464,6 @@ color:var(--paragraph);
 
 }
 
-@media(max-width:992px){
-
-.footer-grid{
-
-grid-template-columns:1fr;
-
-gap:45px;
-
-}
-
-.newsletter{
-
-max-width:400px;
-
-}
-
-}
-
 /*==============================
 SCROLL PROGRESS BAR
 ==============================*/
@@ -2792,7 +2494,6 @@ box-shadow:0 0 18px rgba(177,31,61,.6);
 transition:width .1s linear;
 
 }
-
 
 /*==============================
 SCROLL TOP
@@ -2853,7 +2554,6 @@ transform:translateY(-6px) scale(1.08);
 box-shadow:0 0 40px rgba(177,31,61,.55);
 
 }
-
 
 /*==============================
 PRELOADER
@@ -2966,143 +2666,12 @@ opacity:.45;
 }
 
 @keyframes rotateLoader{
-
 from{
-
 transform:rotate(0deg);
-
 }
-
 to{
-
 transform:rotate(360deg);
-
 }
-
-}
-
-
-/*==============================
-RESPONSIVE HERO FIXES
-==============================*/
-
-@media (max-width: 1024px) {
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 50px;
-    }
-
-    .hero p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .hero-right {
-        min-height: 480px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .hero-showcase {
-        width: 400px;
-        height: 400px;
-        transform: scale(0.85);
-    }
-
-    .card1 {
-        top: 0;
-        left: 5%;
-    }
-
-    .card2 {
-        top: 150px;
-        right: 5%;
-    }
-
-    .card3 {
-        bottom: 0;
-        left: 15%;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero {
-        padding: 140px 0 80px;
-        min-height: auto;
-    }
-
-    .hero h1 {
-        font-size: 3.5rem;
-    }
-
-    .hero-showcase {
-        width: 320px;
-        height: 320px;
-        transform: scale(0.7);
-    }
-
-    /* Stack or hide/reposition glass cards nicely on mobile devices */
-    .glass-card {
-        width: 180px;
-        padding: 18px;
-    }
-
-    .glass-card h4 {
-        font-size: 1rem;
-    }
-
-    .glass-card p {
-        font-size: 0.85rem;
-    }
-
-    .card1 {
-        top: -10px;
-        left: -10px;
-    }
-
-    .card2 {
-        top: 120px;
-        right: -15px;
-    }
-
-    .card3 {
-        bottom: -20px;
-        left: 20px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 15px;
-        padding: 0 20px;
-    }
-
-    .hero-buttons .btn, 
-    .hero-buttons .btn-outline {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2.8rem;
-    }
-
-    .hero-showcase {
-        display: none; /* Hide complex rings/core on very small screens to maintain a clean layout */
-    }
-
-    .hero-right {
-        min-height: auto;
-        display: none; /* Alternatively, keep cards stacked if preferred, or hide heavy graphical elements */
-    }
 }
 
 /*==============================
@@ -3118,7 +2687,6 @@ will-change:transform;
 transition:transform .15s linear;
 
 }
-
 
 /*==============================
 CUSTOM CURSOR
@@ -3250,4 +2818,238 @@ transition-delay:.32s;
 
 transition-delay:.40s;
 
+}
+
+
+/*===================================================================
+   FULL RESPONSIVE & MOBILE THEME-MATCHED STYLING
+====================================================================*/
+
+@media (max-width: 1100px) {
+    .process-timeline {
+        grid-template-columns: 1fr;
+    }
+    .process-timeline::before {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    /* Hero section collapse for tablets */
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-right {
+        min-height: 480px;
+        width: 100%;
+    }
+
+    .hero-showcase {
+        width: 420px;
+        height: 420px;
+        transform: scale(0.85);
+    }
+
+    .card1 {
+        top: 10px;
+        left: 5%;
+    }
+
+    .card2 {
+        top: 160px;
+        right: 5%;
+    }
+
+    .card3 {
+        bottom: 10px;
+        left: 15%;
+    }
+}
+
+@media (max-width: 992px) {
+    /* Navbar collapse matching the dark burgundy theme */
+    .menu-btn {
+        display: block;
+        color: #fff;
+    }
+
+    nav .btn {
+        display: none;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 90px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 90px);
+        background: rgba(11, 5, 5, 0.97);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+        transition: left 0.45s cubic-bezier(0.17, 0.84, 0.44, 1);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+    }
+
+    /* Grids scaling down */
+    .about-container,
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .services-grid,
+    .portfolio-grid,
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pricing-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-price {
+        transform: none;
+    }
+
+    .trusted-logos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .newsletter {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile adjustments */
+    section {
+        padding: 80px 0;
+    }
+
+    .hero {
+        padding: 130px 0 60px;
+    }
+
+    .hero h1 {
+        font-size: 3.2rem;
+    }
+
+    .hero-showcase {
+        width: 300px;
+        height: 300px;
+        transform: scale(0.7);
+    }
+
+    .glass-card {
+        width: 170px;
+        padding: 18px;
+    }
+
+    .glass-card h4 {
+        font-size: 1rem;
+    }
+
+    .glass-card p {
+        font-size: 0.85rem;
+    }
+
+    .card1 {
+        top: 0;
+        left: 0;
+    }
+
+    .card2 {
+        top: 110px;
+        right: 0;
+    }
+
+    .card3 {
+        bottom: 0;
+        left: 10px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-buttons .btn,
+    .hero-buttons .btn-outline {
+        width: 100%;
+        text-align: center;
+    }
+
+    .about h2,
+    .contact-info h2 {
+        font-size: 2.5rem;
+    }
+
+    .section-heading h2 {
+        font-size: 2.5rem;
+    }
+
+    .about-features,
+    .services-grid,
+    .portfolio-grid,
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trusted-logos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonial-slider {
+        flex-direction: column;
+    }
+
+    .testimonial-track {
+        width: 100%;
+        min-height: 500px;
+    }
+
+    .contact-form {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.6rem;
+    }
+
+    .hero-showcase,
+    .hero-right {
+        display: none;
+    }
 }
